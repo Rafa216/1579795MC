@@ -1,0 +1,25 @@
+cant=0
+def minimo(arr):
+    r=arr[0]
+    global cant
+    for x in arr:
+        cant+=1
+        if(x<r):
+            r=x
+    return r
+    
+def ordenar(arr):
+    aux=arr[:]
+    arrsort=[]
+    for r in range(len(aux)):
+        x=minimo(aux)
+        aux.remove(x)
+        arrsort.append(x)
+    return arrsort
+    
+import random
+y=random.sample(range(0,1000),40)
+print(y)
+ysort=ordenar(y)
+print(cant)
+print(ysort)
