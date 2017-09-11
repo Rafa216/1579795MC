@@ -1,0 +1,23 @@
+contador=0
+def insercion(arr):
+	global contador
+	for numero in range(1,len(arr)):
+		value=arr[numero]
+		a=numero-1
+		while a>=0:
+			contador+=1
+			if value<arr[a]:
+				arr[a+1]=arr[a]
+				arr[a]=value
+				a-=1
+			else:
+				break
+	return arr
+
+
+import random
+r = random.sample(range(0,1000),200)
+print(r)
+rsorted=insercion(r)
+print(contador)
+print(rsorted)
