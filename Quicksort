@@ -1,0 +1,23 @@
+contador = 0
+
+def quicksort(array):
+    global contador
+    if array==[] :
+        return []
+    m=array[0]
+    left=[]
+    right=[]
+    for k in array[1:]:
+        if k<m:
+            left.append(k)
+        else:
+            right.append(k)
+        contador+=1
+    return quicksort(left)+[m]+quicksort(right)
+
+import random
+r = random.sample(range(0,1000),200)
+print(r)
+rsorted=quicksort(r)
+print(contador)
+print(rsorted)
