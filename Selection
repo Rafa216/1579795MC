@@ -1,0 +1,23 @@
+contador=0
+
+def selection(arr):
+	aux=arr[:]
+	global contador
+	for i in range(0,len(arr)-1):
+		value=i
+		for j in range(i+1,len(arr)):
+			contador=contador+1
+			if arr[j]<arr[value]:
+				value=j
+			if value!=i:
+				aux=arr[i]
+				arr[i]=arr[value]
+				arr[value]=aux
+	return contador
+
+import random
+r = random.sample(range(0,1000),200)
+print(r)
+rsorted=selection(r)
+print(contador)
+print(rsorted)
