@@ -1,19 +1,18 @@
 contador = 0
 
 def burbuja(arr):
-      aux=arr[:]
-      global cantidad
-      for i in range(len(arr)):
-            for j in range(0,len(arr)-i-1):
-                  if(aux[j]>aux[j+1]):
+    aux=arr[:]
+    global contador
+    for i in range(len(arr)):
+        for j in range(0,len(arr)-i-1):
+            if(aux[j]>aux[j+1]):
                   aux[j],aux[j+1]=aux[j+1],aux[j]
-                  cantidad+=1
-      return aux
+                  contador+=1
+    return aux
 
 import random
-r = random.sample(range(0,200),100)
+r = random.sample(range(0,1000),200)
 print(r)
 rsorted=burbuja(r)
 print(contador)
 print(rsorted)
-
