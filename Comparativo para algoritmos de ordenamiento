@@ -1,0 +1,80 @@
+contadorB = 0
+contadorI = 0
+contadorS = 0
+contadorQ = 0
+def burbuja(arr):
+    aux=arr[:]
+    global contadorB
+    for i in range(len(arr)):
+        for j in range(0,len(arr)-i-1):
+            if(aux[j]>aux[j+1]):
+                  aux[j],aux[j+1]=aux[j+1],aux[j]
+                  contadorB+=1
+    return aux
+    
+def insercion(arr):
+	global contadorI
+	for numero in range(1,len(arr)):
+		value=arr[numero]
+		a=numero-1
+		while a>=0:
+			contadorI+=1
+			if value<arr[a]:
+				arr[a+1]=arr[a]
+				arr[a]=value
+				a-=1
+			else:
+				break
+	return arr
+  
+def selection(arr):
+	aux=arr[:]
+	global contador
+	for i in range(0,len(arr)-1):
+		value=i
+		for j in range(i+1,len(arr)):
+			contadorI+=1
+			if arr[j]<arr[value]:
+				value=j
+			if value!=i:
+				aux=arr[i]
+				arr[i]=arr[value]
+				arr[value]=aux
+	return arr
+  
+def quicksort(array):
+    global contadorQ
+    if array==[] :
+        return []
+    m=array[0]
+    left=[]
+    right=[]
+    for k in array[1:]:
+        if k<m:
+            left.append(k)
+        else:
+            right.append(k)
+        contadorQ+=1
+    return quicksort(left)+[m]+quicksort(right)
+
+r=[6,5,3,1,8,7,2,4]
+print(r)
+rsorted=burbuja(r)
+print(contadorB)
+print(rsorted)
+r2=[6,5,3,1,8,7,2,4]
+print(r2)
+rsorted=insertion(r)
+print(contadorI)
+print(rsorted)
+print(r)
+r2sorted=selection(r2)
+print(contadorS)
+print(r2sorted)
+print(r2)
+r3=[6,5,3,1,8,7,2,4]
+print(r3)
+r3sorted=quicksort(r3)
+print(contadorQ)
+print(r3sorted)
+print(r3)
