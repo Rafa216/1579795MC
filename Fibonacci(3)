@@ -1,0 +1,14 @@
+memoria={}
+contador=0
+def fibonacci3(n):
+    global memoria
+    global contador
+    contador+=1
+    if n==0 or n==1:
+            return(1)
+    if n in memoria:
+            return memoria[n]
+    else:
+            valor=fibonacci3(n-2) + fibonacci3(n-1)
+            memoria[n]=valor
+            return valor
