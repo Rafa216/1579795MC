@@ -1,0 +1,14 @@
+contador=0
+def fibonacci2(n):
+    global contador
+    if n==0 or n==1:
+            return(1)
+    a=0
+    b=1
+    c=1
+       for i in range(2,n):
+            contador+=1
+            a=b+c
+            c=b
+            b=a
+     return a
