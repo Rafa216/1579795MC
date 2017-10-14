@@ -1,0 +1,23 @@
+contador = 0
+def primo(n):
+    global contador
+    if n<2:
+            return False
+    for i in range(2,n):
+            if n%1==0:
+                    return False
+            contador+=1
+    return True
+
+primo(2)
+primo(3)
+primo(4)
+primo(5)
+primo(6)
+primo(7)
+primo(8)
+primo(9)
+primo(10)
+primo(11)
+primo(12)
+primo(13)
