@@ -1,0 +1,7 @@
+contador = 0
+def fibonacci1(n):
+    global contador
+    contador+=1
+    if n==0 or n==1:
+            return(1)
+    return (fibonacci1(n-2) + fibonacci1(n-1))
